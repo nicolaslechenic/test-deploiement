@@ -18,7 +18,7 @@ class Database{
         $db_pass = $_ENV['DB_PASS'];
 
         try{
-            $database = new \PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8", $db_user, $db_pass);
+            $database = new \PDO("mysql:host=$db_host:8889;dbname=$db_name;charset=utf8", $db_user, $db_pass);
             return $database;
         } 
         catch(Exception $e){
