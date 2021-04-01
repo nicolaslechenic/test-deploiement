@@ -2,8 +2,11 @@
 namespace Project\Models;
 use Exception;
 
-$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-$dotenv->load();
+
+if($_SERVER['HTTP_HOST'] !=  "supertheoapp.herokuapp.com") {
+    $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+    $dotenv->load();
+}
 
 
 class Database{
