@@ -16,7 +16,7 @@ class Controller{
     function contactSender($username, $email, $message){
         $contactManager = new \Project\Models\ContactManager;
         // Removing all illegal characters from email
-        $errors = ContactManager::errors($email, $message);
+        $errors = \Project\Models\ContactManager::errors($email, $message);
 
         if(empty($errors)) {
             $contact = $contactManager->sendMessageToDb($username,$email,$message);
